@@ -215,7 +215,7 @@ def del_by_index_from_list(_list, _index):
     return _list[:_index] + _list[_index+1:]
 
 
-def createTable(*args):
+def insert_report(*args):
     """Inserts a table from clipboard, and format it.
 
     """
@@ -350,7 +350,7 @@ def createTable(*args):
 
 
 g_exportedScripts = (
-    createTable,
+    insert_report,
 )
 
 # vim: set shiftwidth=4 softtabstop=4 expandtab:
