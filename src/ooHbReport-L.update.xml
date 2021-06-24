@@ -5,12 +5,12 @@
  xmlns:l="http://libreoffice.org/extensions/description/2011"
  xmlns:xlink="http://www.w3.org/1999/xlink" >
    <identifier value="org.elisey.ooHbReport" />
-   <version value="0.0.3" />
+   <version value="0.0.4" />
    <dependencies>
       <l:LibreOffice-minimal-version value="3.5" dep:name="LibreOffice 3.5 minimum, or more recent" />
    </dependencies>
    <update-download>
-      <src xlink:href="https://github.com/EliseyP/ooHbReporter/raw/master/ooHbReport-L-0.0.3.oxt" />
+      <src xlink:href="https://github.com/EliseyP/ooHbReporter/raw/master/ooHbReport-L-0.0.4.oxt" />
    </update-download>
    <publisher>
       <name lang="en" xlink:href="https://github.com/EliseyP/ooHbReporter/">ooHomeBank Reporter.</name>
