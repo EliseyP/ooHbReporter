@@ -50,7 +50,10 @@ langs_dic = {
 def translate(_string):
     if need_translate:
         translate_dic = langs_dic.get(language)
-        return translate_dic.get(_string, _string)
+        if translate_dic:
+            return translate_dic.get(_string, _string)
+        else:
+            return _string
     else:
         return _string
 
