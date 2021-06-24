@@ -1,6 +1,6 @@
 # -*- coding: utf_8 -*-
 
-# import locale
+import re
 import uno
 
 from com.sun.star.text.ControlCharacter import PARAGRAPH_BREAK
@@ -88,6 +88,11 @@ def Mri(target):
 
 
 def getClipboardText(_ctx):
+    def replace_comma_to_dot(string_):
+        pat_monetary = r'(-?\d+)\,(\d{2})'
+        sub_monetary = r'\1.\2'
+        return re.sub(pat_monetary, sub_monetary, string_)
+
     _string = ''
     _smgr = _ctx.getServiceManager()
     clip = _smgr.createInstanceWithContext(
@@ -102,6 +107,12 @@ def getClipboardText(_ctx):
             _string = converter.convertToSimpleType(
                 clip_contents.getTransferData(_type), STRING)
             break
+
+    # For very strange situation, when amount in 1234,56 format in clipboard.
+    # In one Windows user account, while in other account it's right - 1234.56.
+    if re.search(r'-?\d+,\d{2}', _string):
+        _string = replace_comma_to_dot(_string)
+
     return _string
 
 
@@ -341,6 +352,10 @@ def insert_report(*args):
 
     table_template = "Box List Blue"
     table.TableTemplateName = table_template
+
+    # Repeat Header (first row) on next page
+    table.RepeatHeadline = True
+    table.HeaderRowCount = 1
 
     # Fill table from data array.
     table_fill(doc, table, data, locale)
