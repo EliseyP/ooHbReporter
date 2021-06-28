@@ -2,17 +2,17 @@
 
 **0.0.5**
 
-Libre Office расширение для обработки отчетов программы Home Bank.  
+LibreOffice extension for processing reports of the Home Bank program.  
 
-### Общая информация о расширении
-Программа [Home Bank](http://homebank.free.fr/en/index.php) позволяет копировать отчеты в буфер обмена. Расширение позволяет вставить эти отчеты в открытый документ с некоторым форматированием.  
+### General information about the extension
+Program [Home Bank](http://homebank.free.fr/en/index.php) allows you to copy reports to the clipboard. The extension allows you to insert these reports into an open document with some formatting.
 
-**Для установки**  
+**To install**  
 
-Для Linux требуется установить компонент LibreOffice: *libreoffice-script-provider-python*  
+For Linux, you need to install the LibreOffice component: *libreoffice-script-provider-python*  
 ``$ sudo apt-get install libreoffice-script-provider-python``  
 
-**После установки**  
+**After installation**  
 
-В OOffice основная функция доступна через кнопку собственной панели: ![Вставить](src/rep_16.png)   
+In LOffice, the main function is available through the button of its own panel: ![Insert](src/rep_16.png)   
 
